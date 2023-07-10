@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shakespearean Text Generator</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+        .container {
+            display: flex;
+        }
+        form {
+            flex-basis: 30%;
+            margin-right: 2rem;
+        }
+        #generated_text {
+            flex-basis: 70%;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Shakespearean Text Generator</h1>
+	<div class='container'>
+		<form action="/generate" method="post">
+		  <label for="start_string">Start String:</label>
+		  <input type="text" id="start_string" name="start_string"><br>
+
+		  <label for="num_generate">Number of Characters to Generate:</label>
+		  <input type="number" id="num_generate" name="num_generate" value="1000"><br>
+
+		  <label for="temperature">Temperature:</label>
+		  <input type="number" id="temperature" name="temperature" step="0.1" min="0.1" max="5" value="1.0"><br>
+
+		  <input type="submit" value="Generate">
+		</form>
+
+		<div id="generated_text"></div>
+	</div>
+		
+    <script>
+		const form = document.querySelector('form');
+		const generatedTextDiv = document.querySelector('#generated_text');
+		form.addEventListener('submit', event => {
+			event.preventDefault();
+			const formData = new FormData(form);
+			fetch('/generate', {
+			method: 'POST',
+			body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+				generatedTextDiv.innerHTML = data.generated_text;
+			})
+			.catch(error => console.error(error));
+		});
+    </script>
+  </body>
+</html>
