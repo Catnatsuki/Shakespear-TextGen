@@ -1,0 +1,110 @@
+/* Styles for Text Generation App */
+
+/* Body styles */
+body {
+  background-color: #FCE5D7;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Page title styles */
+h1 {
+  font-size: 3.5em;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  color: #2C3E50;
+  text-shadow: 2px 2px 2px #BDC3C7;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* Form styles */
+form {
+  background-color: #FFF6EC;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  margin: 10px 0 5px 0;
+}
+
+input[type=text],
+input[type=number] {
+  border: 1px solid #F5B7B1;
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: #FF8C69;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-top: 20px;
+  padding: 10px 30px;
+  transition: background-color 0.3s ease;
+}
+
+input[type=submit]:hover {
+  background-color: #FFB347;
+}
+
+/* Generated text styles */
+#generated_text {
+  background-color: #FFF6EC;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.2em;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  overflow-y: scroll;
+  max-height: 600px;
+  transition: box-shadow 0.3s ease;
+}
+
+#generated_text:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Scrollbar styles */
+#generated_text::-webkit-scrollbar {
+  width: 8px;
+  background-color: #FCE5D7;
+}
+
+#generated_text::-webkit-scrollbar-thumb {
+  background-color: #FF8C69;
+  border-radius: 10px;
+}
+
+#generated_text::-webkit-scrollbar-thumb:hover {
+  background-color: #FFB347;
+}
